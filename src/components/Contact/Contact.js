@@ -2,7 +2,7 @@ import Container from '../Container/Container';
 
 const Contact = () => {
     return (
-        <section className="mt-24 mb-10 md:mt-28 md:mb-14 lg:mt-40">
+        <section className="mt-24 mb-10 md:mt-28 md:mb-14 lg:mt-20">
             <Container>
                 <div className="bg-black py-12 px-6 rounded-[10px] flex flex-col gap-6 md:pt-14 md:px-[75px] md:pb-16 lg:flex-row lg:justify-between">
                     <div className="text-center lg:text-left">
