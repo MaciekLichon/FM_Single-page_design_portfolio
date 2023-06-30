@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light text-regular_mob text-gray font-regular font-jakarta md:text-regular_tablet;
+  }
+  h1 {
+    @apply text-header_big_mob md:text-header_big_tablet lg:text-header_big_desktop;
+  }
+  h2 {
+    @apply text-header_medium_mob md:text-header_medium_tablet lg:text-header_medium_desktop;
+  }
+  h3 {
+    @apply text-header_small_mob md:text-header_small_tablet;
+  }
+
+  .header {
+    @apply text-black font-bold;
+  }
+
+  .btn {
+    @apply text-button_mob font-regular text-light py-2 px-7 rounded-[30px] transition duration-300 md:text-button_tablet md:py-3.5 md:px-11;
+
+    &_dark {
+      @apply bg-black hover:bg-purple;
+    }
+    &_orange {
+      @apply bg-red hover:bg-orange
+    }
+  }
+
+  .arrow {
+    @apply rounded-full w-16 h-16 bg-black hover:bg-purple transition duration-300 bg-center bg-no-repeat;
+    &_left {
+      background-image: url('./assets/icon-arrow-left.svg');
+    }
+    &_right {
+      background-image: url('./assets/icon-arrow-right.svg');
+    }
+  }
+
+  .flex {
+    &_centered {
+      @apply flex items-center justify-center;
+    }
+    &_betweened {
+      @apply flex items-center justify-between;
+    }
+  }
+
+  .grid_template {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 364px 182px 158px 182px 182px;
+    gap: 24px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 182px 158px 182px;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 182px 158px;
+    }
+  }
+
+  .tile {
+    @apply rounded-lg text-light font-bold text-header_small_mob p-6 relative flex flex-col items-end justify-between;
+
+    p {
+      @apply self-start;
+    }
+
+    &:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+      @apply col-span-2;
+    }
+
+    &:nth-child(1) {
+      @apply md:row-span-2;
+    }
+
+    &:nth-child(4) {
+      @apply lg:row-start-2 lg:col-start-3;
+    }
+
+  }
+}
